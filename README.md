@@ -9,7 +9,7 @@ Nan Luo, Shangying Wang, Jia Lu, Xiaoyi Ouyang, Lingchong You.
   * OptimalModel1D.m: The model with 1D branch extension. Generates results in Figure 2 and Figure 3.
   * OptimalModel2D.m: The model with 2D branch extension. Generates results in Figure S3 and Figure S4.
   
-* **Predicting patterns using the optimization principle**: 
+* **Pattern prediction**: 
   The codes for simulating colony patterns using the optimization principle.  
   * OptimalPattern_uniform.m: Predicting colony patterns under uniform conditions. Generates results in Figure 4 and Figure S5.  
   * OptimalPattern_hetero.m: Predicting colony patterns under heterogeneous conditions. Generates results in Figure 5.  
