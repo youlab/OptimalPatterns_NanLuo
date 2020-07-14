@@ -13,4 +13,4 @@ Nan Luo, Shangying Wang, Jia Lu, Xiaoyi Ouyang, Lingchong You.
   The codes for simulating colony patterns using the optimization principle.  
   * OptimalPattern_uniform.m: Predicting colony patterns under uniform conditions. Generates results in Figure 4 and Figure S5.  
   * OptimalPattern_hetero.m: Predicting colony patterns under heterogeneous conditions. Generates results in Figure 5.  
-  * OptimalPattern_multiseeding.m: Predicting colony patterns with various seeding configurations. Generates results in Figure 6.
+  * OptimalPattern_multiseeding.m: Predicting colony patterns with various seeding configurations. Generates results in Figure 6 and Figure S8.
