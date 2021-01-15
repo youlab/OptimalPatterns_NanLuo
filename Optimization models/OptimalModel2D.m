@@ -3,9 +3,9 @@ function Biomass = OptimalModel2D(Width, Density, N0, gama)
 % Parameters
 if nargin < 1
     Width   = 4; 
-    Density = 0.2;
+    Density = 0.15;
     N0      = 8;
-    gama    = 10;
+    gama    = 7.5;
 end
 
 % Parameters
@@ -23,11 +23,11 @@ rr = sqrt(xx .^ 2 + yy .^ 2);
 
 bN = 160;
 DN = 9;
-aC = 0.5;
+aC = 1.2;
 KN = 0.8;
 Cm = 0.05;
 
-noiseamp = 0.5 * pi;
+noiseamp = 0.2 * pi;
 
 % Initialization
 P = zeros(nx, ny);      % Pattern
