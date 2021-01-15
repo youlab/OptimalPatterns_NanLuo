@@ -1,14 +1,16 @@
 % Predicting colony patterns with various seeding configurations
-% Generates results in Figure 6 and Figure S8
+% Generates results in Figure 6 and Figure S9
 
 clear
 % Load parameter set
 load('Parameters_multiseeding.mat'); % select parameter file
-config  = 3; % select seeding configuration (see below)
+config  = 2; % select seeding configuration (see below)
 NutrientLevel = 2;  % select nutrient level: 1-low, 2-medium, 3-high
+
+% Obtain optimal W & D from the mapping
 N0      = N0s(NutrientLevel);
-Width   = OptimalWidth(NutrientLevel);
-Density = OptimalDensity(NutrientLevel);
+Width   = interp1(mapping_N, mapping_optimW, N0, 'linear', 'extrap');
+Density = interp1(mapping_N, mapping_optimD, N0, 'linear', 'extrap');
 
 % ------------------------ Seeding configurations -------------------------
 switch config
@@ -45,7 +47,7 @@ end
 
 % Parameters
 L      = 90;
-totalt = 48;
+totalt = 24;
 
 dt = 0.02;
 nt = totalt / dt;
@@ -97,7 +99,7 @@ for iseed = 1 : nseeding
 Tipxi = ones(ntips0(iseed), 1) * x0(iseed);  Tipx = [Tipx; Tipxi]; % x coordinates of every tip
 Tipyi = ones(ntips0(iseed), 1) * y0(iseed);  Tipy = [Tipy; Tipyi]; % y coordinates of every tip
 thetai = linspace(pi/2, 2 * pi+pi/2, ntips0(iseed) + 1)'; 
-thetai = thetai(1 : ntips0(iseed)) + rand * pi; % growth directions of every branch
+thetai = thetai(1 : ntips0(iseed)) + iseed /10 * pi; % growth directions of every branch
 theta = [theta; thetai];
 end
 ntips0 = sum(ntips0);

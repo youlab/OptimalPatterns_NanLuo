@@ -1,10 +1,10 @@
 % Predicting colony patterns under uniform conditions (N0 & gama)
-% Generates results in Figure 4 and Figure S5
+% Generates results in Figure 4 and Figure S6
 
 clear
 % Load parameter set
 load('Parameters_uniform_Figure4.mat'); % select parameter file
-panel   = 1; % select panel number
+panel   = 2; % select panel number
 N0      = N0V(panel);
 gama    = gamaV(panel);
 Width   = OptimalWidth(panel);
@@ -12,7 +12,7 @@ Density = OptimalDensity(panel);
 
 % Parameters
 L      = 90;
-totalt = 100;
+totalt = 14;
 
 dt = 0.02;
 nt = totalt / dt;
@@ -23,7 +23,7 @@ y  = linspace(-L/2, L/2, ny);
 [xx, yy] = meshgrid(x, y);
 rr = sqrt(xx .^ 2 + yy .^ 2);
 
-noiseamp = 0;
+noiseamp = 0 * pi;
 
 % Initialization
 P = zeros(nx, ny);      % Pattern
@@ -43,7 +43,7 @@ dE = zeros(ntips0, 1);
 BranchDomain = cell(ntips0, 1); % the domain covered by each branch
 for k = 1 : ntips0; BranchDomain{k} = C > 0; end
 
-theta = linspace(pi/3, 2 * pi+pi/3, ntips0 + 1)'; 
+theta = linspace(0, 2 * pi, ntips0 + 1)' + rand * pi; 
 theta = theta(1 : ntips0); % growth directions of every branch
 delta = linspace(-1, 1, 201) * pi;
 
@@ -123,7 +123,7 @@ for i = 0 : nt
                 theta(k) = thetaO(k, ind(k)) + noiseamp * rand;
             end
         end
-
+        
         % Fill the width of the branches    
         for k = 1 : ntips
             d = sqrt((Tipx(k) - xx) .^ 2 + (Tipy(k) - yy) .^ 2);
