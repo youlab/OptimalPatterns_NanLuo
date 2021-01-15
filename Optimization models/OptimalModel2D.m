@@ -2,10 +2,10 @@ function Biomass = OptimalModel2D(Width, Density, N0, gama)
 
 % Parameters
 if nargin < 1
-    Width   = 10; 
-    Density = 0.1;
+    Width   = 4; 
+    Density = 0.2;
     N0      = 8;
-    gama    = 7.5;
+    gama    = 10;
 end
 
 % Parameters
@@ -23,11 +23,11 @@ rr = sqrt(xx .^ 2 + yy .^ 2);
 
 bN = 160;
 DN = 9;
-aC = 1.2;
+aC = 0.5;
 KN = 0.8;
 Cm = 0.05;
 
-noiseamp = 0.2 * pi;
+noiseamp = 0.5 * pi;
 
 % Initialization
 P = zeros(nx, ny);      % Pattern
@@ -115,10 +115,8 @@ for i = 0 : nt
         Tipy(ind) = Tipy_pre(ind);
 
         % Fill the width of the branches    
-        TipR = cell(ntips, 1);
         for k = 1 : ntips
             d = sqrt((Tipx(k) - xx) .^ 2 + (Tipy(k) - yy) .^ 2);
-            TipR{k} = d <= Width/2;
             P(d <= Width/2) = 1;     
         end
         C(P == 1) = Biomass / (sum(P(:)) * dx * dy);  % Make cell density uniform
