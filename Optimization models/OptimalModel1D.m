@@ -42,7 +42,7 @@ xx = xx'; yy = yy';
 
 dLk = gama / (sum(XP(:, 1)) * dx);
 Ln = round(L / dy);
-C0 = C0 / (sum(XP(:, 1)) * dx * Ln * dy) / (Density * Lx);
+C0 = C0 / (sum(XP(:, 1)) * dx * L) / (Density * Lx); 
 C = C0 * XP;
 C(:, Ln + 1 : end) = 0;
 N = zeros(nx, ny) + N0;
