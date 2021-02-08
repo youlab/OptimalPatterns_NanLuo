@@ -1,0 +1,2 @@
+model_checkpoint_path: "/hpc/home/sw57/for_Nan/NN3/save/mymodel.ckpt"
+all_model_checkpoint_paths: "/hpc/home/sw57/for_Nan/NN3/save/mymodel.ckpt"
