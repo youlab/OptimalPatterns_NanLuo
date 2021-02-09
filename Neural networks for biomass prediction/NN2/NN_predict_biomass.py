@@ -6,8 +6,7 @@ this code is used for prediction the biomass.
 
 Note: instead of using the fully_connected(), conv2d() and dropout() functions from the tensorflow.contrib.layers module (as in the book), 
 we now use the dense(), conv2d() and dropout() functions (respectively) from the tf.layers module, which did not exist before. 
-This is preferable because anything in contrib may change or be deleted without notice, while tf.layers is part of the official API. 
-The code is mostly the same.
+This is preferable because anything in contrib may change or be deleted without notice, while tf.layers is part of the official API.
 """
 
 import tensorflow as tf
