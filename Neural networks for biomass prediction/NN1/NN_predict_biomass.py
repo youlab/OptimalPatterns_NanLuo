@@ -5,8 +5,8 @@ Created on Mon Feb. 17 2020
 this code is used for prediction the biomass.
 
 Note: instead of using the fully_connected(), conv2d() and dropout() functions from the tensorflow.contrib.layers module (as in the book), 
-we now use the dense(), conv2d() and dropout() functions (respectively) from the tf.layers module, which did not exist when this chapter was written. 
-This is preferable because anything in contrib may change or be deleted without notice, while  tf.layers is part of the official API. As you will see, the code is mostly the same.
+we now use the dense(), conv2d() and dropout() functions (respectively) from the tf.layers module, which did not exist before. 
+This is preferable because anything in contrib may change or be deleted without notice, while tf.layers is part of the official API. 
 """
 
 import tensorflow as tf
@@ -50,10 +50,6 @@ batch_size = 2000
 
 
 he_init = tf.contrib.layers.variance_scaling_initializer()
-"""
-xe means cross-entropy
-mse means mean squared error
-"""
 _srng = np.random.RandomState(np.random.randint(1,2147462579))
                 
 # initial state
@@ -76,19 +72,7 @@ def data_loader(features, labels, batch_size, shuffle=False):
                 else:
                         excerpt = slice(start_idx, start_idx + batch_size)
                 yield features[excerpt], labels[excerpt]
-                
-
-#def save_model(saver, sess, step):
-#    """
-#    save model with path error checking
-#    """
-#    if not os.path.exists(model_path):
-#        os.makedirs(model_path)
-#    my_path = os.path.join(model_path, "mymodel.ckpt")
-#    saver.save(sess, os.path.join(os.getcwd(), my_path), global_step=step)
-                                      
-
-                
+                                
 # build computation graph of model
 in_array = tf.placeholder(tf.float32, shape=[None,input_dim]) #input arrays
 out = tf.placeholder(tf.float32, shape=[None,output_dim]) #output categories
@@ -154,7 +138,6 @@ with tf.Session() as sess:
             np.savetxt(ff2, np.concatenate((valid_output,pred_test),axis=0))
         print(epoch, "Train loss:", loss_train, "Test loss:", loss_test,"Best loss",best_loss, "epoch",checks_without_progress)
         
-        #save_model(saver, sess, step=epoch)
             
 
 with tf.Session() as sess:
