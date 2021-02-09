@@ -2,11 +2,8 @@
 """
 Created on Mon Feb. 17 2020
 
-this code is used for prediction the biomass.
-
-Note: instead of using the fully_connected(), conv2d() and dropout() functions from the tensorflow.contrib.layers module (as in the book), 
-we now use the dense(), conv2d() and dropout() functions (respectively) from the tf.layers module, which did not exist when this chapter was written. 
-This is preferable because anything in contrib may change or be deleted without notice, while  tf.layers is part of the official API. As you will see, the code is mostly the same.
+this code is used for screening the desired parameter space to redict the biomass using the ensemble method. 
+Since the parameter combinations are large, we choose to run them in batches and append the data to the already exsisted files.
 """
 
 import tensorflow as tf
