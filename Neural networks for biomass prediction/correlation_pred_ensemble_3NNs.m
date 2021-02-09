@@ -1,6 +1,6 @@
 clear all; close all; clc;
 
-train_data=load('final_output_train_ensemble.txt');%ground truth, NN1, NN2, NN3,NN4,NN5,NN6,NN7, index of chosen NN, ensemble predictions, average disagreement between NNs,error between ensemble predictions and gt 
+train_data=load('final_output_train_ensemble.txt');%ground truth, NN1, NN2, NN3,index of chosen NN, ensemble predictions, average disagreement between NNs,error between ensemble predictions and gt 
 test_data=load('final_output_test_ensemble.txt');
 
 train_size=size(train_data,1);
