@@ -8,7 +8,7 @@ Nan Luo, Shangying Wang, Jia Lu, Xiaoyi Ouyang, Lingchong You.
 
 * During data preprocessing, we used min-max scaling to normalize all the input parameters to be within the region 0-1. Code for data preprocessing (using Matlab): data_cleaning.m
 
-* The neural networks that we developed have nine input parameters and one output corresponding to the biomass of the cell. 
+* The neural networks that we developed have nine input parameters and one output corresponding to the biomass of the colony. 
  
 * Between the input layer and output layer, we have four fully connected layers with 512, 512, 256, and 128 nodes, respectively.  
 
@@ -16,7 +16,7 @@ Nan Luo, Shangying Wang, Jia Lu, Xiaoyi Ouyang, Lingchong You.
 
 * We chose the initial learning rate to be 0.001
 
-* We used the Adam optimization algorithm to adaptive moment estimation and gradient clipping to prevent exploding gradients. 
+* We used the Adam optimization algorithm for adaptive moment estimation and gradient clipping to prevent exploding gradients. 
 
 * We trained 3 neural networks independently (train 3 NNs using code "NN_predict_biomass.py" in the folder /NN1, /NN2 and /NN3. During the training process, the models are saved in the "/save" folder. After NNs are trained, the final models are stored in the folder "/saved_model".
 
