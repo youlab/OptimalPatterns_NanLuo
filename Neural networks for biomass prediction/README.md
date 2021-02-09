@@ -31,6 +31,7 @@ Nan Luo, Shangying Wang, Jia Lu, Xiaoyi Ouyang, Lingchong You.
 
 
 #Below is the BibTex of the paper cited for the ensemble method:
+
 @article{wang2019massive,
   title={Massive computational acceleration by using neural networks to emulate mechanism-based biological models},
   author={Wang, Shangying and Fan, Kai and Luo, Nan and Cao, Yangxiaolu and Wu, Feilun and Zhang, Carolyn and Heller, Katherine A and You, Lingchong},
