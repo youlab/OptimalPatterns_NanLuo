@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Feb. 17 2020
-
-this code is used for prediction the biomass.
-
-Note: instead of using the fully_connected(), conv2d() and dropout() functions from the tensorflow.contrib.layers module (as in the book), 
-we now use the dense(), conv2d() and dropout() functions (respectively) from the tf.layers module, which did not exist when this chapter was written. 
-This is preferable because anything in contrib may change or be deleted without notice, while  tf.layers is part of the official API. As you will see, the code is mostly the same.
+this code is used for prediction the biomass with the ensemble methods.
+3 neural networks are loaded to make independent predictions and the one with the lowest rmse compared to the other 2 predictions is the final prediction.
 """
 
 import tensorflow as tf
@@ -55,10 +51,6 @@ dropout_rate=0.5
 
 
 he_init = tf.contrib.layers.variance_scaling_initializer()
-"""
-xe means cross-entropy
-mse means mean squared error
-"""
 _srng = np.random.RandomState(np.random.randint(1,2147462579))
                 
 # initial state
