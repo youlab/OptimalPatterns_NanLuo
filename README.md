@@ -2,7 +2,7 @@
 
 This is the repository for the Matlab codes for generating the results in:
 **Collective colony growth is optimized by branching pattern formation in Pseudomonas aeruginosa**, 
-Nan Luo, Shangying Wang, Jia Lu, Xiaoyi Ouyang, Lingchong You
+Nan Luo, Shangying Wang, Jia Lu, Xiaoyi Ouyang, Lingchong You.
 Molecular Systems Biology, 2021
 
 * **Optimization models**: 
