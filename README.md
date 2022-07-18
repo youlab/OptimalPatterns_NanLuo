@@ -1,8 +1,9 @@
 # OptimalPatterns_NanLuo
 
-This is the repository for the Matlab codes for generating the results in the manuscript:
-**Predictable programming of branching patterns based on an optimization principle**, 
-Nan Luo, Shangying Wang, Jia Lu, Xiaoyi Ouyang, Lingchong You.
+This is the repository for the Matlab codes for generating the results in:
+**Collective colony growth is optimized by branching pattern formation in Pseudomonas aeruginosa**, 
+Nan Luo, Shangying Wang, Jia Lu, Xiaoyi Ouyang, Lingchong You
+Molecular Systems Biology, 2021
 
 * **Optimization models**: 
   The codes for the optimization models of colony growth.
